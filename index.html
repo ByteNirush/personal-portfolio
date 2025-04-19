@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nirush Man Shrestha - Full Stack Developer Portfolio" />
+    <title>Nirush Man Shrestha - Portfolio</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./assets/profile-pic!.png" as="image">
+    
+    <!-- Preconnect to External Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#41436A',
+              secondary: '#F64668',
+              accent1: '#984063',
+              accent2: '#FE9677',
+              dark: {
+                DEFAULT: '#13272E',
+                lighter: '#487674',
+                lightest: '#83B4AE',
+                accent: '#E8C69B',
+                warm: '#D69369',
+                orange: '#CB6330'
+              }
+            },
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+            animation: {
+              'gradient': 'gradient 8s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'slide-up': 'slide-up 0.5s ease-out',
+              'slide-down': 'slide-down 0.5s ease-out',
+              'fade-in': 'fade-in 0.5s ease-out',
+              'bounce-soft': 'bounce-soft 2s ease-in-out infinite',
+              'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+              'spin-slow': 'spin 3s linear infinite',
+              'typing': 'typing 3.5s steps(40, end)',
+              'blink': 'blink .75s step-end infinite',
+              'wave': 'wave 2.5s ease-in-out infinite',
+              'bounce-text': 'bounce-text 1s ease-in-out infinite',
+              'gradient-text': 'gradient-text 3s ease infinite',
+              'focus-in': 'focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both',
+              'rubber-band': 'rubber-band 1s ease-in-out',
+              'slide-in-left': 'slide-in-left 1s ease-out',
+              'slide-in-right': 'slide-in-right 1s ease-out',
+              'scale-in': 'scale-in 0.5s ease-out',
+              'rotate-in': 'rotate-in 0.6s ease-out',
+              'bounce-in': 'bounce-in 0.8s cubic-bezier(0.36, 0, 0.66, -0.56)',
+              'shimmer': 'shimmer 2s linear infinite',
+              'float-shadow': 'float-shadow 3s ease-in-out infinite',
+              'glow': 'glow 2s ease-in-out infinite',
+              'float-3d': 'float-3d 6s ease-in-out infinite',
+              'sparkle': 'sparkle 2s ease-in-out infinite',
+              'morph': 'morph 8s ease-in-out infinite',
+              'slide-up-fade': 'slide-up-fade 0.5s ease-out',
+              'pop': 'pop 0.3s ease-out',
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+              'glitch': 'glitch 1s linear infinite',
+              'rainbow': 'rainbow 8s linear infinite'
+            },
+            keyframes: {
+              gradient: {
+                '0%, 100%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'left center'
+                },
+                '50%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'right center'
+                },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              'slide-up': {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              'slide-down': {
+                '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'bounce-soft': {
+                '0%, 100%': { transform: 'translateY(-3%)' },
+                '50%': { transform: 'translateY(0)' },
+              },
+              'pulse-soft': {
+                '0%, 100%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(1.05)' },
+              },
+              typing: {
+                'from': { width: '0' },
+                'to': { width: '100%' }
+              },
+              blink: {
+                '50%': { borderColor: 'transparent' }
+              },
+              wave: {
+                '0%, 100%': { transform: 'rotate(0deg)' },
+                '20%, 60%': { transform: 'rotate(-25deg)' },
+                '40%, 80%': { transform: 'rotate(10deg)' }
+              },
+              'bounce-text': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' }
+              },
+              'gradient-text': {
+                '0%, 100%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'left center'
+                },
+                '50%': {
+                  'background-size': '200% 200%',
+                  'background-position': 'right center'
+                }
+              },
+              'focus-in': {
+                '0%': {
+                  filter: 'blur(12px)',
+                  opacity: '0'
+                },
+                '100%': {
+                  filter: 'blur(0px)',
+                  opacity: '1'
+                }
+              },
+              'rubber-band': {
+                '0%': { transform: 'scale3d(1, 1, 1)' },
+                '30%': { transform: 'scale3d(1.25, 0.75, 1)' },
+                '40%': { transform: 'scale3d(0.75, 1.25, 1)' },
+                '50%': { transform: 'scale3d(1.15, 0.85, 1)' },
+                '65%': { transform: 'scale3d(0.95, 1.05, 1)' },
+                '75%': { transform: 'scale3d(1.05, 0.95, 1)' },
+                '100%': { transform: 'scale3d(1, 1, 1)' }
+              },
+              'slide-in-left': {
+                '0%': {
+                  transform: 'translateX(-100%)',
+                  opacity: '0'
+                },
+                '100%': {
+                  transform: 'translateX(0)',
+                  opacity: '1'
+                }
+              },
+              'slide-in-right': {
+                '0%': {
+                  transform: 'translateX(100%)',
+                  opacity: '0'
+                },
+                '100%': {
+                  transform: 'translateX(0)',
+                  opacity: '1'
+                }
+              },
+              'scale-in': {
+                '0%': { transform: 'scale(0)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' }
+              },
+              'rotate-in': {
+                '0%': { transform: 'rotate(-180deg) scale(0)', opacity: '0' },
+                '100%': { transform: 'rotate(0) scale(1)', opacity: '1' }
+              },
+              'bounce-in': {
+                '0%': { transform: 'scale(0)' },
+                '50%': { transform: 'scale(1.25)' },
+                '70%': { transform: 'scale(0.9)' },
+                '100%': { transform: 'scale(1)' }
+              },
+              'shimmer': {
+                '0%': { backgroundPosition: '-200% 0' },
+                '100%': { backgroundPosition: '200% 0' }
+              },
+              'float-shadow': {
+                '0%, 100%': {
+                  transform: 'translateY(0)',
+                  boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
+                },
+                '50%': {
+                  transform: 'translateY(-20px)',
+                  boxShadow: '0 25px 15px rgba(0,0,0,0.1)'
+                }
+              },
+              'glow': {
+                '0%, 100%': {
+                  textShadow: '0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.5)'
+                },
+                '50%': {
+                  textShadow: '0 0 15px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.5)'
+                }
+              },
+              'float-3d': {
+                '0%, 100%': { 
+                  transform: 'translateZ(0) translateY(0) rotateX(0) rotateY(0)',
+                  boxShadow: '0 5px 15px rgba(0,0,0,0.2)'
+                },
+                '25%': {
+                  transform: 'translateZ(20px) translateY(-10px) rotateX(5deg) rotateY(5deg)',
+                  boxShadow: '0 25px 15px rgba(0,0,0,0.1)'
+                },
+                '75%': {
+                  transform: 'translateZ(20px) translateY(-10px) rotateX(-5deg) rotateY(-5deg)',
+                  boxShadow: '0 25px 15px rgba(0,0,0,0.1)'
+                }
+              },
+              'sparkle': {
+                '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                '50%': { opacity: '0.5', transform: 'scale(1.2)' }
+              },
+              'morph': {
+                '0%, 100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+                '50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' }
+              },
+              'slide-up-fade': {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' }
+              },
+              'pop': {
+                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                '50%': { transform: 'scale(1.1)' },
+                '100%': { transform: 'scale(1)', opacity: '1' }
+              },
+              'wiggle': {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' }
+              },
+              'glitch': {
+                '0%, 100%': { transform: 'translate(0)' },
+                '33%': { transform: 'translate(-5px, 2px)' },
+                '66%': { transform: 'translate(5px, -2px)' }
+              },
+              'rainbow': {
+                '0%': { filter: 'hue-rotate(0deg)' },
+                '100%': { filter: 'hue-rotate(360deg)' }
+              }
+            },
+          },
+        },
+      }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    
+    <!-- Deferred JavaScript -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-md shadow-sm transition-all duration-500">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <a href="#" 
+             onclick="scrollToPosition(event)" 
+             class="text-2xl font-bold bg-gradient-to-r from-secondary via-accent1 to-accent2 bg-clip-text text-transparent hover:opacity-80 transition-all duration-500 animate-shimmer bg-[length:200%_auto] cursor-pointer"
+             data-scroll-direction="top">
+            Nirush Man Shrestha
+          </a>
+          <button class="lg:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none" aria-label="Toggle menu">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+          <div class="hidden lg:flex space-x-8">
+            <a href="#about" class="text-primary hover:text-secondary transition-colors relative group">
+              About
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent2 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#experience" class="text-primary hover:text-secondary transition-colors relative group">
+              Experience
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent2 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#certifications" class="text-primary hover:text-secondary transition-colors relative group">
+              Certifications
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent2 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#projects" class="text-primary hover:text-secondary transition-colors relative group">
+              Projects
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent2 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#contact" class="text-primary hover:text-secondary transition-colors relative group">
+              Contact
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent2 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profile" class="min-h-screen flex items-center py-20 bg-gradient-to-br from-white to-gray-50 dark:from-dark dark:to-dark-lighter relative overflow-hidden">
+      <!-- Background Animation -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute w-96 h-96 bg-gradient-to-r from-secondary to-accent2 rounded-full blur-3xl animate-morph -top-48 -left-48"></div>
+        <div class="absolute w-96 h-96 bg-gradient-to-r from-accent1 to-accent2 rounded-full blur-3xl animate-morph delay-1000 top-1/2 right-0"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative" data-aos="fade-right">
+            <div class="relative w-80 h-80 mx-auto animate-float-3d perspective-1000">
+              <div class="absolute inset-0 bg-gradient-to-r from-secondary to-accent2 rounded-full animate-morph"></div>
+              <div class="absolute inset-2 bg-white dark:bg-gray-800 rounded-full overflow-hidden animate-rotate-in">
+                <img src="./assets/profile-pic!.png" 
+                     alt="Nirush Man Shrestha profile picture" 
+                     class="w-full h-full object-cover transform hover:scale-110 transition-all duration-500 animate-scale-in filter hover:brightness-110" 
+                     loading="lazy" />
+              </div>
+              <!-- Sparkle Effects -->
+              <div class="absolute top-0 left-1/4 w-2 h-2 bg-white rounded-full animate-sparkle"></div>
+              <div class="absolute bottom-1/4 right-0 w-2 h-2 bg-white rounded-full animate-sparkle delay-300"></div>
+              <div class="absolute top-1/2 left-0 w-2 h-2 bg-white rounded-full animate-sparkle delay-700"></div>
+            </div>
+          </div>
+
+          <div class="text-center lg:text-left space-y-6" data-aos="fade-left">
+            <p class="text-lg text-secondary mb-2 animate-slide-up-fade inline-block">
+              <span class="inline-block animate-wave">👋</span> 
+              <span class="animate-pop inline-block">Hello,</span>
+              <span class="animate-pop inline-block delay-100"> I'm</span>
+            </p>
+
+            <div class="overflow-hidden perspective-1000">
+              <h1 class="text-5xl font-bold bg-gradient-to-r from-secondary via-accent1 to-accent2 bg-clip-text text-transparent animate-rainbow mb-4 hover:animate-rubber-band cursor-default group relative">
+                <!-- First Name -->
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in hover:text-accent2 hover:animate-glitch">N</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-75 hover:text-accent1 hover:animate-glitch">i</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-100 hover:text-secondary hover:animate-glitch">r</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-150 hover:text-accent2 hover:animate-glitch">u</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-200 hover:text-accent1 hover:animate-glitch">s</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-200 hover:text-secondary hover:animate-glitch">h</span>
+                
+                <!-- Space -->
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-250"> </span>
+                
+                <!-- Middle Name -->
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-300 hover:text-accent2 hover:animate-glitch">M</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-350 hover:text-accent1 hover:animate-glitch">a</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-400 hover:text-secondary hover:animate-glitch">n</span>
+                
+                <!-- Space -->
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-450"> </span>
+                
+                <!-- Last Name -->
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-500 hover:text-accent2 hover:animate-glitch">S</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-550 hover:text-accent1 hover:animate-glitch">h</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-600 hover:text-secondary hover:animate-glitch">r</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-650 hover:text-accent2 hover:animate-glitch">e</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-700 hover:text-accent1 hover:animate-glitch">s</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-750 hover:text-secondary hover:animate-glitch">t</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-800 hover:text-accent2 hover:animate-glitch">h</span>
+                <span class="inline-block transition-all duration-300 group-hover:animate-bounce-in delay-850 hover:text-accent1 hover:animate-glitch">a</span>
+              </h1>
+            </div>
+
+            <div class="overflow-hidden whitespace-nowrap border-r-4 border-secondary animate-typing relative">
+              <p class="text-2xl text-accent1 mb-8 inline-block animate-glow relative">
+                <span class="animate-rainbow">Full Stack Developer</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-secondary to-accent2 transform scale-x-0 transition-transform duration-700 group-hover:scale-x-100"></span>
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in">
+              <a href="/assets/Curriculum vitae.pdf" class="transform hover:scale-105 transition-all duration-300">
+                <button class="px-6 py-3 bg-gradient-to-r from-secondary to-accent1 hover:from-accent1 hover:to-secondary text-white rounded-full shadow-lg transition-all duration-500 animate-bounce-soft hover:animate-none">
+                  <i class="fas fa-download mr-2 animate-bounce"></i> Download CV
+                </button>
+              </a>
+
+              <button class="px-6 py-3 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transform hover:-translate-y-1 transition-all duration-300 animate-pulse-soft">
+                <i class="fas fa-envelope mr-2 animate-bounce"></i> Contact Info
+              </button>
+            </div>
+            
+            <div class="flex justify-center lg:justify-start mt-8 space-x-6 animate-fade-in">
+              <a href="https://www.linkedin.com/in/nirush-man-shrestha-5719bb257/" 
+                 class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center text-white hover:shadow-lg transform hover:-translate-y-2 transition-all duration-500 animate-bounce-soft"
+                 target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin text-xl animate-pulse"></i>
+              </a>
+              <a href="https://github.com/ByteNirush" 
+                 class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center text-white hover:shadow-lg transform hover:-translate-y-2 transition-all duration-500 animate-bounce-soft"
+                 target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github text-xl animate-pulse"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-dark">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="text-secondary text-lg mb-2">Get To Know More</p>
+          <h2 class="text-4xl font-bold text-primary dark:text-white">About Me</h2>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative" data-aos="fade-right">
+            <div class="relative w-64 h-64 mx-auto">
+              <div class="absolute inset-0 bg-gradient-to-r from-secondary to-accent2 rounded-lg animate-gradient"></div>
+              <div class="absolute inset-2 bg-white dark:bg-gray-700 rounded-lg overflow-hidden">
+                <img src="./assets/Nirush.jpg" 
+                     alt="Profile picture" 
+                     class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                     loading="lazy" />
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-8" data-aos="fade-left">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-graduation-cap text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold text-primary dark:text-white">Education</h3>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">
+                  B.Sc. (Hons) Software Engineering<br/>
+                  <span class="text-secondary">University of Bedfordshire</span>
+                </p>
+              </div>
+              
+              <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                  <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-certificate text-white text-xl"></i>
+                  </div>
+                  <h3 class="text-xl font-semibold text-primary dark:text-white">Certifications</h3>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Multiple certifications from<br/>
+                  <span class="text-secondary">freeCodeCamp & LinkedIn</span>
+                </p>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+              <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Passionate Full Stack Developer with a solid foundation in Golang, Python, JavaScript, and web development. 
+                Eager to apply problem-solving skills and hands-on experience in building dynamic web applications. 
+                Looking for opportunities to grow as a Full Stack Developer and contribute to innovative and collaborative projects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="text-secondary text-lg mb-2">My</p>
+          <h2 class="text-4xl font-bold text-primary dark:text-white">Certifications</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+            <div class="p-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-certificate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary dark:text-white text-center mb-2">Data Analysis with Python</h3>
+              <p class="text-secondary text-center mb-2">freeCodeCamp</p>
+              <p class="text-gray-500 dark:text-gray-400 text-center mb-4">November 2024</p>
+              <a href="#">
+              <button class="w-full py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                View Certificate
+              </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+            <div class="p-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-certificate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary dark:text-white text-center mb-2">Scientific Computing with Python</h3>
+              <p class="text-secondary text-center mb-2">freeCodeCamp</p>
+              <p class="text-gray-500 dark:text-gray-400 text-center mb-4">November 2024</p>
+              <a href="#">
+              <button class="w-full py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                View Certificate
+              </button>
+            </a>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+            <div class="p-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-certificate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary dark:text-white text-center mb-2">Responsive Web Design</h3>
+              <p class="text-secondary text-center mb-2">freeCodeCamp</p>
+              <p class="text-gray-500 dark:text-gray-400 text-center mb-4">July 2024</p>
+              <a href="#">
+              <button class="w-full py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                View Certificate
+              </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="400">
+            <div class="p-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-certificate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary dark:text-white text-center mb-2">Career Essentials in Software Development</h3>
+              <p class="text-secondary text-center mb-2">Microsoft and LinkedIn</p>
+              <p class="text-gray-500 dark:text-gray-400 text-center mb-4">February 2025</p>
+              <a href="https://media.licdn.com/dms/image/v2/D5622AQE-Qf_oEUlHAQ/feedshare-shrink_1280/B56ZTlciKqHQAk-/0/1739016250319?e=1746057600&v=beta&t=HNo_yABPDdaJ97Tgo1Tgf2SRdmE5t5FH73WmIIo2tyk">
+              <button class="w-full py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                View Certificate
+              </button>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-aos="fade-up" data-aos-delay="500">
+            <div class="p-6">
+              <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <i class="fas fa-certificate text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-semibold text-primary dark:text-white text-center mb-2">Career Essentials in GitHub</h3>
+              <p class="text-secondary text-center mb-2">LinkedIn Professional Certificate</p>
+              <p class="text-gray-500 dark:text-gray-400 text-center mb-4">January 2025</p>
+              <a href="https://media.licdn.com/dms/image/v2/D5622AQH4WJMON4H-0w/feedshare-shrink_1280/B56ZSOr1BxHEAk-/0/1737560641924?e=1746057600&v=beta&t=4EWvm1uIveLOOztwR8XMSwas76QrK79Yo9inflPR-HA">
+              <button class="w-full py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                View Certificate
+              </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white dark:bg-dark">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="text-secondary text-lg mb-2">Explore My</p>
+          <h2 class="text-4xl font-bold text-primary dark:text-white">Technical Skills</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Programming Languages -->
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6" data-aos="fade-right">
+            <h3 class="text-2xl font-semibold text-primary dark:text-white mb-6 flex items-center">
+              <i class="fas fa-code text-secondary mr-3"></i>
+              Programming Languages
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Golang</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Experienced</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Python</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Experienced</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Java</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Basic</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">JavaScript</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Experienced</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Web Development -->
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6" data-aos="fade-up">
+            <h3 class="text-2xl font-semibold text-primary dark:text-white mb-6 flex items-center">
+              <i class="fas fa-globe text-secondary mr-3"></i>
+              Web Development
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">HTML/CSS</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Experienced</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Node.js</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Basic</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Django</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Learning</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools & Technologies -->
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6" data-aos="fade-left">
+            <h3 class="text-2xl font-semibold text-primary dark:text-white mb-6 flex items-center">
+              <i class="fas fa-tools text-secondary mr-3"></i>
+              Tools & Technologies
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Git/GitHub</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Experienced</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">MySQL/SQLite</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Experienced</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div class="w-8 h-8 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-3">
+                  <i class="fas fa-check text-white"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary dark:text-white">Docker/AWS</h4>
+                  <p class="text-gray-500 dark:text-gray-400">Basic</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-dark">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="text-secondary text-lg mb-2">Check Out My</p>
+          <h2 class="text-4xl font-bold text-primary dark:text-white">Projects</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./assets/image0.png" 
+                   alt="Taxi Booking System" 
+                   class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                   loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-primary dark:text-white mb-2">Taxi Booking System</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A desktop-based taxi booking system with user-friendly UI and efficient database management.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Python</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Tkinter</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">SQLite</span>
+              </div>
+              <div class="flex gap-4">
+                <button class="flex-1 py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                  Live Demo
+                </button>
+                <a href="#" class="flex-1 py-2 border-2 border-secondary text-secondary rounded-lg hover:bg-secondary hover:text-white transition-colors text-center">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./assets/image1.png" 
+                   alt="Self-Care Web App" 
+                   class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                   loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-primary dark:text-white mb-2">Self-Care Web App</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A comprehensive self-care platform with vision board, personal development, journal, and mood-based music recommendation.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">HTML/CSS</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">JavaScript</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Python/Django</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">Firebase</span>
+              </div>
+              <div class="flex gap-4">
+                <button class="flex-1 py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                  Live Demo
+                </button>
+                <a href="https://github.com/ByteNirush/BugBusters-Octopus-_Clockmakers" class="flex-1 py-2 border-2 border-secondary text-secondary rounded-lg hover:bg-secondary hover:text-white transition-colors text-center">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./assets/image2.png" 
+                   alt="Amazon Clone" 
+                   class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                   loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-primary dark:text-white mb-2">Amazon Clone</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                A responsive e-commerce website clone with modern UI/UX design.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">HTML</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">CSS</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm">JavaScript</span>
+              </div>
+              <div class="flex gap-4">
+                <button class="flex-1 py-2 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity">
+                  Live Demo
+                </button>
+                <a href="https://github.com/ByteNirush/AMAZON-Clone-" class="flex-1 py-2 border-2 border-secondary text-secondary rounded-lg hover:bg-secondary hover:text-white transition-colors text-center">
+                  Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <p class="text-secondary text-lg mb-2">Get in Touch</p>
+          <h2 class="text-4xl font-bold text-primary dark:text-white">Contact Me</h2>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8" data-aos="fade-right">
+            <form id="contact-form" class="space-y-6" novalidate>
+              <div>
+                <label for="name" class="block text-sm font-medium text-primary dark:text-white mb-2">Name</label>
+                <input type="text" 
+                       id="name" 
+                       name="name" 
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-primary dark:text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+                       required 
+                       aria-required="true" 
+                       aria-invalid="false" 
+                       aria-describedby="name-error">
+                <div class="text-red-500 text-sm mt-1 hidden" id="name-error">Please enter your name</div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-primary dark:text-white mb-2">Email</label>
+                <input type="email" 
+                       id="email" 
+                       name="email" 
+                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-primary dark:text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+                       required 
+                       aria-required="true" 
+                       aria-invalid="false" 
+                       aria-describedby="email-error">
+                <div class="text-red-500 text-sm mt-1 hidden" id="email-error">Please enter a valid email</div>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-primary dark:text-white mb-2">Message</label>
+                <textarea id="message" 
+                          name="message" 
+                          rows="5"
+                          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-primary dark:text-white focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors resize-none"
+                          required 
+                          aria-required="true" 
+                          aria-invalid="false" 
+                          aria-describedby="message-error"></textarea>
+                <div class="text-red-500 text-sm mt-1 hidden" id="message-error">Please enter your message</div>
+              </div>
+              
+              <button type="submit" 
+                      class="w-full py-3 bg-gradient-to-r from-secondary to-accent2 text-white rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center">
+                <i class="fas fa-paper-plane mr-2"></i>
+                Send Message
+              </button>
+            </form>
+          </div>
+          
+          <!-- Contact Info -->
+          <div class="space-y-8" data-aos="fade-left">
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6">
+              <h3 class="text-2xl font-semibold text-primary dark:text-white mb-6">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-primary dark:text-white">Location</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Ringroad, Balaju, Kathmandu, Nepal</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-phone text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-primary dark:text-white">Phone</h4>
+                    <p class="text-gray-600 dark:text-gray-300">+977 9767486685</p>
+                  </div>
+                </div>
+                
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center mr-4">
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-primary dark:text-white">Email</h4>
+                    <a href="mailto:nirushstha@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-secondary transition-colors">
+                      nirushstha@gmail.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-6">
+              <h3 class="text-2xl font-semibold text-primary dark:text-white mb-6">Social Media</h3>
+              <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/nirush-man-shrestha-5719bb257/" 
+                   class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center text-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  <i class="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://github.com/ByteNirush" 
+                   class="w-12 h-12 bg-gradient-to-r from-secondary to-accent2 rounded-full flex items-center justify-center text-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="text-gray-400">©Nirush Man Shrestha. All Rights Reserved.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="https://www.linkedin.com/in/nirush-man-shrestha-5719bb257/" 
+               class="text-gray-400 hover:text-white transition-colors"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+            <a href="https://github.com/ByteNirush" 
+               class="text-gray-400 hover:text-white transition-colors"
+               target="_blank" 
+               rel="noopener noreferrer">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="mailto:nirushstha@gmail.com" 
+               class="text-gray-400 hover:text-white transition-colors">
+              <i class="fas fa-envelope text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
